@@ -1,15 +1,67 @@
-header{
+header {
     display: flex;
     height: auto;
-    place-content: center;
+    justify-content: start;
+    position: fixed;
     width: 100%;
 
-    .header-container{
+    .header-container {
         align-items: center;
+        color: white;
         display: flex;
         justify-content: space-between;
         height: auto;
-        padding: 10px 0;
-        width: 95%;
+        margin-left: auto;
+        padding: 20px 0;
+        width: 70%;
+
+        ul {
+            display: flex;
+            flex-direction: row;
+            gap: 0.8rem;
+            list-style-type: none;
+
+            li{
+                font-size: 0.8rem;
+            }
+        }
+
+        .profile {
+            background: linear-gradient(to right, red, white) border-box;
+            border: 2px solid transparent;
+            border-radius: 50em;
+            cursor: pointer;
+            height: 2.375rem;
+            margin-right: 1rem;
+            position: relative;
+            width: 2.375rem;
+
+            img{
+                border-radius: 50%;
+                height: 100%;
+                object-fit: cover;
+                width: 100%;
+            }
+        }
+
+    }
+    @media (min-width: 768px) {
+        .header-container{
+            width: 65%;
+
+            ul{
+                gap: 1rem;
+    
+                li{
+                    font-size: 1rem;
+                }
+            }
+
+            .profile{
+                height: 2.8125rem;
+                margin-right: 5rem;
+                width: 2.8125rem;
+            }
+        }
     }
 }

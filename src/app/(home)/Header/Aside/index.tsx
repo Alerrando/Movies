@@ -11,16 +11,24 @@ const MenuBar: MenuBarProps = {
 }
 
 export default function Aside(){
-    const [menubar, setMenuBar] = useState(MenuBar);
+    const [menuBar, setMenuBar] = useState(MenuBar);
 
     return(
-        <aside className={`${menubar.value}`} onClick={() => menubar.value == "closed" ? setMenuBar({ value: "open" }) : setMenuBar({ value: "closed" }) }>
+        <aside className={`${menuBar.value}`}>
             <div className="aside-container">
-                <header>
-                    <FilmSlate size={32} />
-                    <span className="closed">Movies</span>
+                <header onClick={() => handleMenuBar()}>
+                    <div className="header-title">
+                        <FilmSlate size={32} />
+                        <span className="closed" translate="no">Movies</span>
+                    </div>
+
+                    <X size={32} className="closed X" onClick={() => handleMenuBar()} />
                 </header>
             </div>
         </aside>
     )
+
+    function handleMenuBar(){
+        menuBar.value == "open" ? setMenuBar({ value: "closed" }) : setMenuBar({ value: "open" })
+    }
 }

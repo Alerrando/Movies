@@ -8,9 +8,9 @@ export default function Header(){
             <Aside />
             <div className="header-container">
                 <ul>
-                    <li>Movies</li>
-                    <li>Series</li>
-                    <li>Tv Shows</li>
+                    <li translate='no'>Movies</li>
+                    <li translate='no'>Series</li>
+                    <li translate='no'>Tv Shows</li>
                 </ul>
 
                 <div className="profile">

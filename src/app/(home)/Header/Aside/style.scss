@@ -3,7 +3,6 @@ aside {
     color: white;
     display: flex;
     height: auto;
-    transition: width 0.5s;
     width: 20%;
 
     .aside-container {
@@ -14,10 +13,23 @@ aside {
         header {
             align-items: center;
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
             height: 100%;
             position: relative;
             width: 100%;
+
+            .header-title{
+                align-items: center;
+                display: flex;
+                flex-direction: row;
+                gap: 1rem;
+                height: auto;
+                width: auto;
+            }
+
+            .X{
+                cursor: pointer;
+            }
         }
     }
 }
@@ -39,6 +51,7 @@ aside.open{
     height: 100vh;
     position: fixed;
     width: 100vw;
+    z-index: 100;
 
     .aside-container{
         background-color: #17181B;
@@ -49,8 +62,8 @@ aside.open{
             flex-direction: row;
             gap: 1.3rem;
             height: auto;
-            padding: 25px 0;
-            width: 75%;
+            padding: 25px 10px;
+            width: 100%;
 
             span {
                 font-size: 1.1rem;
@@ -62,13 +75,14 @@ aside.open{
 @media (min-width: 768px) {
     aside{
         border-right: 1px solid #464b55;
+        transition: width 0.5s;
         width: 10%;
     }
 
     aside.open {
         background-color: #17181B;
         position: fixed;
-        width: 15%;
+        width: 20%;
 
         .aside-container {
             height: -webkit-fill-available;

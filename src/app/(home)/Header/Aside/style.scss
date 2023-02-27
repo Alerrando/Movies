@@ -1,6 +1,5 @@
 aside {
     align-items: center;
-    color: white;
     display: flex;
     height: auto;
     width: 20%;
@@ -24,7 +23,17 @@ aside {
                 flex-direction: row;
                 gap: 1rem;
                 height: auto;
-                width: auto;
+                width: 2rem;
+
+                span{
+                    font-size: 1.1rem;
+                    overflow: hidden;
+                }
+            }
+
+            svg{
+                min-height: 32px;
+                min-width: 32px;
             }
 
             .X{
@@ -65,8 +74,8 @@ aside.open{
             padding: 25px 10px;
             width: 100%;
 
-            span {
-                font-size: 1.1rem;
+            .header-title{
+                width: 7rem;
             }
         }
     }
@@ -75,7 +84,7 @@ aside.open{
 @media (min-width: 768px) {
     aside{
         border-right: 1px solid #464b55;
-        transition: width 0.5s;
+        transition: width 0.5s ease-in-out;
         width: 10%;
     }
 

@@ -7,7 +7,6 @@ header {
 
     .header-container {
         align-items: center;
-        color: white;
         display: flex;
         justify-content: space-between;
         height: auto;
@@ -24,6 +23,17 @@ header {
             li{
                 cursor: pointer;
                 font-size: 0.8rem;
+
+                &:hover{
+                    text-decoration: underline;
+                    text-underline-offset: 0.2rem;
+                }
+            }
+
+            &.page1, &.page2, &.page3, &.page4{
+                li:nth-child(1){
+                    color: red;
+                }
             }
         }
 

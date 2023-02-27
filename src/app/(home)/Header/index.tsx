@@ -2,12 +2,19 @@ import Image from 'next/image'
 import Aside from './Aside'
 import './style.scss'
 
-export default function Header(){
+type HeaderProps = {
+    currentPage: string
+}
+
+export default function Header(props: HeaderProps){
+    const { currentPage } = props;
+
     return (
         <header>
             <Aside />
             <div className="header-container">
-                <ul>
+                <ul className={`${currentPage}`}>
+                    <li translate='no'>Home</li>
                     <li translate='no'>Movies</li>
                     <li translate='no'>Series</li>
                     <li translate='no'>Tv Shows</li>

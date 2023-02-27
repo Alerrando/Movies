@@ -18,11 +18,11 @@ export default function Aside(){
             <div className="aside-container">
                 <header onClick={() => handleMenuBar()}>
                     <div className="header-title">
-                        <FilmSlate size={32} />
-                        <span className="closed" translate="no">Movies</span>
+                        <FilmSlate />
+                        <span translate="no">Movies</span>
                     </div>
 
-                    <X size={32} className="closed X" onClick={() => handleMenuBar()} />
+                    <X className="closed X" onClick={() => handleMenuBar()} />
                 </header>
             </div>
         </aside>

@@ -1,17 +1,14 @@
+import { MenuBarProps } from "@/app/page";
 import { FilmSlate, X } from "phosphor-react";
-import { useState } from "react";
 import './style.scss'
 
-type MenuBarProps = {
-    value: string;
+type AsideProps = {
+    menuBar: MenuBarProps;
+    setMenuBar: (menuBar: MenuBarProps) => void,
 }
 
-const MenuBar: MenuBarProps = {
-    value: "closed" || "open"
-}
-
-export default function Aside(){
-    const [menuBar, setMenuBar] = useState(MenuBar);
+export default function Aside(props: AsideProps){
+    const { menuBar, setMenuBar } = props
 
     return(
         <aside className={`${menuBar.value}`}>

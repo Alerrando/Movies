@@ -1,5 +1,22 @@
 main{
     height: 100%;
-    padding-top: 11%;
+    margin-left: auto;
+    padding-top: 25%;
+    transition: width 0.5s ease-in-out;
     width: 100%;
+}
+
+
+@media (min-width: 768px) {
+    main{
+        padding-top: 11%;
+    }
+
+    main.closed{
+        width: 100%;
+    }
+    
+    main.open{
+        width: 80%;
+    }
 }

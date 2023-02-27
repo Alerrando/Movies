@@ -1,17 +1,20 @@
+import { MenuBarProps } from '@/app/page';
 import Image from 'next/image'
 import Aside from './Aside'
 import './style.scss'
 
 type HeaderProps = {
-    currentPage: string
+    currentPage: string;
+    menuBar: MenuBarProps;
+    setMenuBar: (menuBar: MenuBarProps) => void,
 }
 
 export default function Header(props: HeaderProps){
-    const { currentPage } = props;
+    const { currentPage, menuBar, setMenuBar } = props;
 
     return (
         <header>
-            <Aside />
+            <Aside menuBar={menuBar} setMenuBar={setMenuBar} />
             <div className="header-container">
                 <ul className={`${currentPage}`}>
                     <li translate='no'>Home</li>

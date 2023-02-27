@@ -1,29 +1,27 @@
+@use '../../../global.scss';
+
 aside {
+    @include global.height-width(auto, 20%);
     align-items: center;
     display: flex;
-    height: auto;
-    width: 20%;
 
     .aside-container {
-        height: 100%;
+        @include global.height-width(100%, 100%);
         position: relative;
-        width: 100%;
 
         header {
+            @include global.height-width(100%, 100%);
             align-items: center;
             display: flex;
             justify-content: space-between;
-            height: 100%;
             position: relative;
-            width: 100%;
 
             .header-title{
+                @include global.height-width(auto, 2rem);
                 align-items: center;
                 display: flex;
                 flex-direction: row;
                 gap: 1rem;
-                height: auto;
-                width: 2rem;
 
                 span{
                     font-size: 1.1rem;
@@ -56,10 +54,9 @@ aside.closed {
 }
 
 aside.open{
+    @include global.height-width(100vh, 100vw);
     background-color: rgba(0, 0, 0, 0.5);
-    height: 100vh;
     position: fixed;
-    width: 100vw;
     z-index: 100;
 
     .aside-container{
@@ -67,12 +64,11 @@ aside.open{
         width: 55%;
 
         header {
+            @include global.height-width(auto, 100%);
             align-items: center;
             flex-direction: row;
             gap: 1.3rem;
-            height: auto;
             padding: 25px 10px;
-            width: 100%;
 
             .header-title{
                 width: 7rem;
@@ -96,7 +92,6 @@ aside.open{
         .aside-container {
             height: -webkit-fill-available;
             width: 100%;
-
         }
 
         .closed {

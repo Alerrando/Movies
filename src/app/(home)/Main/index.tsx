@@ -1,9 +1,18 @@
+import { MenuBarProps } from '@/app/page';
 import './style.scss'
 
-export default function Main(){
+type MainProps = {
+    menuBar: MenuBarProps;
+}
+
+export default function Main(props: MainProps) {
+    const { menuBar } = props;
+
     return(
-        <main>
-            <h1>Hello World</h1>
+        <main className={`${menuBar.value}`}>
+            <div className="main-container">
+                <h1>Hello World</h1>
+            </div>
         </main>
     )
 }

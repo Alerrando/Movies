@@ -1,7 +1,7 @@
 'use client'
 import { useState } from "react";
 import Header from "./(home)/Header";
-import Main from "./(home)/Main";
+import { Main } from "./(home)/Main";
 
 export type MenuBarProps = {
   value: string;

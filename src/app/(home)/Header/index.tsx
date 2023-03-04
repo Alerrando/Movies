@@ -20,7 +20,7 @@ export default function Header(props: HeaderProps){
                     <li translate='no'>Home</li>
                     <li translate='no'>Movies</li>
                     <li translate='no'>Series</li>
-                    <li translate='no'>Tv Shows</li>
+                    <li translate='no'>Plans</li>
                 </ul>
 
                 <div className="profile">

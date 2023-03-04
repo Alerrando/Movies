@@ -15,7 +15,7 @@ export default function Aside(props: AsideProps){
             <div className="aside-container">
                 <header onClick={() => handleMenuBar()}>
                     <div className="header-title">
-                        <FilmSlate />
+                        <FilmSlate className="film" />
                         <span translate="no">Movies</span>
                     </div>
 

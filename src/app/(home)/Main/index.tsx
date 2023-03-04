@@ -1,5 +1,6 @@
 import { MenuBarProps } from '@/app/page';
 import Image from 'next/image';
+import { Star } from 'phosphor-react';
 import React, { Key, useEffect, useState } from 'react';
 import './style.scss';
 
@@ -32,14 +33,40 @@ export function Main(props: MainProps) {
             return (
               index < 4 ? (
                 <> 
-                <div className="main-container-img">
-                  <div className="main-img">
+                <div className="main-container-carousel-img">
+                  <div className="main-carousel-img">
                     <Image
                       loader={() => `https://image.tmdb.org/t/p/w500${item.backdrop_path}`}
                       src={`https://image.tmdb.org/t/p/w500${item.backdrop_path}`}
                       alt=""
                       fill
                     />
+                  </div>
+
+                  <div className="main-info-movie">
+                    <div className='infos'>
+                      <h2>{item.original_title}</h2>
+
+                      <div className='rating-country'>
+                        <div className="rating">
+                          <Star size={24} />
+                          {item.vote_average}
+                        </div>
+
+                        <div className='point'></div>
+
+                        <div className="country">
+                          <span className='country-img'>US</span>
+                          <span>English</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="movie-more">
+                      <button className="btn">
+                        More
+                      </button>
+                    </div>
                   </div>
                 </div>
               </>

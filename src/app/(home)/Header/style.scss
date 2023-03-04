@@ -2,6 +2,7 @@
 
 header {
     @include global.height-width(auto, 100%);
+    background-color: #17181B;
     display: flex;
     justify-content: start;
     position: fixed;

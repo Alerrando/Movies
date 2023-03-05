@@ -1,4 +1,5 @@
 import { MenuBarProps } from '@/app/page';
+import { Popover } from '@headlessui/react';
 import Image from 'next/image';
 import { Star } from 'phosphor-react';
 import React, { Key, useEffect, useState } from 'react';
@@ -64,8 +65,12 @@ export function Main(props: MainProps) {
 
                     <div className="movie-more">
                       <button className="btn">
-                        More
+                        View More
                       </button>
+
+                      <Popover className="more-container">
+                        <Popover.Button className="more">+</Popover.Button>
+                      </Popover>
                     </div>
                   </div>
                 </div>

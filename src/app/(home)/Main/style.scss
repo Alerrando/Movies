@@ -164,6 +164,32 @@ main {
                     padding: 4px 25px;
                     outline: none;
                 }
+
+                .more-container{
+                    align-items: center;
+                    display: flex;
+                    justify-content: center;
+                    position: relative;
+
+                    .more{
+                        background: rgba( 255, 255, 255, 0.3 );
+                        border: none;
+                        box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+                        backdrop-filter: blur( 4px );
+                        -webkit-backdrop-filter: blur( 4px );
+                        border-radius: 10px;
+                        border: 1px solid rgba( 255, 255, 255, 0.18 );
+                        border-radius: 50%;
+                        color: #fff;
+                        cursor: pointer;
+                        display: flex;
+                        font-size: 1.6rem;
+                        justify-content: center;
+                        height: 2.2rem;
+                        outline: none;
+                        width: 2.2rem;
+                    }
+                }
             }
         }
     }

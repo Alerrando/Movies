@@ -16,11 +16,13 @@ export default function Aside(props: AsideProps){
                 <header onClick={() => handleMenuBar()}>
                     <div className="header-title">
                         <FilmSlate className="film" />
-                        <span translate="no">Movies</span>
+                        <span translate="no" data-testid="aside-text-movie">Movies</span>
                     </div>
 
                     <X className="closed X" onClick={() => handleMenuBar()} />
                 </header>
+
+                <h2>Hello World</h2>
             </div>
         </aside>
     )

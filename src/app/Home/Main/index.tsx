@@ -66,6 +66,7 @@ export default function Main(props: MainProps) {
                       src={`https://image.tmdb.org/t/p/w500${item.backdrop_path}`}
                       alt=""
                       fill
+                      quality={100}
                     />
                   </div>
 
@@ -76,7 +77,7 @@ export default function Main(props: MainProps) {
                       <div className={styles.ratingCountry}>
                         <div className={styles.rating}>
                           <Star size={26} />
-                          {item.vote_average}
+                          <span>{item.vote_average}</span>
                         </div>
 
                         <div className={styles.point}></div>

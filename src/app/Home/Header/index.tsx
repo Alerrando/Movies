@@ -12,7 +12,7 @@ export default function Header(props: HeaderProps) {
   return (
     <header className={styles.header}>
       <div className={styles['header-container']}>
-        <ul className={`${currentPage} ${styles.ul}`}>
+        <ul className={`${styles[currentPage]} ${styles.ul}`}>
           <li translate="no" className={styles.li}>
             Home
           </li>

@@ -30,9 +30,12 @@
   }
 }
 
+h1, h2, span, li, p, svg {
+  color: white;
+}
+
 * {
   box-sizing: border-box;
-  color: white;
   font-family: "Mulish", sans-serif;
   margin: 0;
   padding: 0;

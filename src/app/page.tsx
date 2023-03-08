@@ -1,23 +1,27 @@
 'use client'
-import { useState } from "react";
-import Header from "./(home)/Header";
-import { Main } from "./(home)/Main";
+import * as React from 'react';
+import Aside from './Home/Aside';
+import Header from './Home/Header';
+import Main from './Home/Main';
 
 export type MenuBarProps = {
   value: string;
-}
+};
 
 const MenuBar: MenuBarProps = {
-  value: "closed" || "open"
-}
+  value: 'closed' || 'open',
+};
 
 export default function Home() {
-  const [menuBar, setMenuBar] = useState(MenuBar);
+  const [menuBar, setMenuBar] = React.useState(MenuBar);
 
   return (
-    <>
-      <Header currentPage={'page1'} menuBar={menuBar} setMenuBar={setMenuBar} />
-      <Main menuBar={menuBar} />
-    </>
-  )
+    <div className="body-container">
+      <Aside menuBar={menuBar} setMenuBar={setMenuBar} />
+      <section>
+        <Header currentPage={'page1'} />
+        <Main menuBar={menuBar} />
+      </section>
+    </div>
+  );
 }

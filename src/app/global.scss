@@ -1,14 +1,39 @@
-@import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,300;0,500;0,600;0,700;0,800;1,300&family=Concert+One&family=Sora:wght@400;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,300;0,500;0,600;0,700;0,800;1,300&family=Concert+One&family=Sora:wght@400;600;700&display=swap");
 
-@mixin height-width($height, $width){
-    height: $height;
-    width: $width;
+@mixin height-width($height, $width) {
+  height: $height;
+  width: $width;
 }
 
-*{
-    box-sizing: border-box;
-    color: white;
-    font-family: 'Mulish', sans-serif;
-    margin: 0;
-    padding: 0;
+.body-container {
+  overflow-y: hidden;
+  @include height-width(100vh, 100vw);
+  display: flex;
+
+  section {
+    @include height-width(100%, 100%);
+  }
+
+  @media screen and (min-width: 764px) {
+    section {
+      width: 80%;
+    }
+  }
+
+  .swiper-button-prev,
+  .swiper-button-next {
+    color: black;
+  }
+
+  .swiper-pagination span {
+    background-color: limegreen;
+  }
+}
+
+* {
+  box-sizing: border-box;
+  color: white;
+  font-family: "Mulish", sans-serif;
+  margin: 0;
+  padding: 0;
 }

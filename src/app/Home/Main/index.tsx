@@ -7,9 +7,9 @@ import 'swiper/swiper.min.css';
 import 'swiper/swiper-element.min.css';
 import 'swiper/swiper-bundle.min.css';
 import Image from 'next/image';
-import { getFeaturedCarousel } from 'api';
+import { AiOutlineStar } from 'react-icons/ai';
 import { MenuBarProps } from '@/app/page';
-import { Star } from 'phosphor-react';
+import { getFeaturedCarousel } from 'api';
 
 type MainProps = {
   menuBar: MenuBarProps;
@@ -32,7 +32,6 @@ export default function Main(props: MainProps) {
       try {
         const repos: FeaturedCarousel = await getFeaturedCarousel();
         setFeaturedCarousel(repos);
-        console.log(featuredCarousel);
       } catch (e) {
         console.error(e);
       }
@@ -58,11 +57,13 @@ export default function Main(props: MainProps) {
         ) : (
           featuredCarousel.results.map((item: any, index: number) => {
             return index < 4 ? (
-              <div>
+              <div key={index}>
                 <SwiperSlide className={styles.mainContainerCarouselImg}>
                   <div className={styles.mainCarouselImg}>
                     <Image
-                      loader={() => `https://image.tmdb.org/t/p/w500${item.backdrop_path}`}
+                      loader={() =>
+                        `https://image.tmdb.org/t/p/w500${item.backdrop_path}`
+                      }
                       src={`https://image.tmdb.org/t/p/w500${item.backdrop_path}`}
                       alt=""
                       fill
@@ -76,7 +77,7 @@ export default function Main(props: MainProps) {
 
                       <div className={styles.ratingCountry}>
                         <div className={styles.rating}>
-                          <Star size={26} />
+                          <AiOutlineStar size={26} />
                           <span>{item.vote_average}</span>
                         </div>
 

@@ -13,7 +13,7 @@
   display: flex;
   height: auto;
   justify-content: start;
-  position: relative;
+  position: fixed;
   width: 100%;
   z-index: 100;
 
@@ -77,18 +77,23 @@
       }
     }
   }
-  @media (min-width: 768px) {
+}
+
+@media (min-width: 1024px) {
+  .header{
+    position: relative;
+
     .headerContainer {
       width: 65%;
-
+  
       .ul {
         gap: 2rem;
-
+  
         .li {
           font-size: 1rem;
         }
       }
-
+  
       .profile {
         height: 2.8125rem;
         margin-right: 5rem;

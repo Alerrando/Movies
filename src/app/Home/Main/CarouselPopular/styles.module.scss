@@ -1,0 +1,62 @@
+@keyframes spinner-c7wet2 {
+    100% {
+      transform: rotate(1turn);
+    }
+  }
+  
+  .section-container {
+    display: flex;
+    height: 25%;
+    flex-direction: row;
+    gap: 10px;
+    margin-left: 0;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+  
+    .spinner {
+      height: 56px;
+      border-radius: 50%;
+      background: radial-gradient(farthest-side, #474bff 94%, #0000) top/9px 9px
+          no-repeat,
+        conic-gradient(#0000 30%, #474bff);
+      animation: spinner-c7wet2 1s infinite linear;
+      width: 56px;
+      -webkit-mask: radial-gradient(
+        farthest-side,
+        #0000 calc(100% - 9px),
+        #000 0
+      );
+    }
+  
+    .containerPopularMovieInfo {
+      background-color: #222;
+      border-radius: 10px;
+      display: grid;
+      height: 90%;
+      padding: 25px;
+      width: 200px!important;
+  
+      .popularMovieImg {
+        height: 50px;
+        width: 50px;
+  
+        img {
+          border-radius: 35%;
+          height: 100%;
+          width: 100%;
+        }
+      }
+
+      .popularMovieInfo{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        h4{
+          font-size: 0.9rem;
+        }
+      }
+    }
+  }
+  

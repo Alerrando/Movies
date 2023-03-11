@@ -180,7 +180,7 @@
 
     .aside-container {
       background-color: #17181b;
-      grid-template-rows: 10% 80% 10%;
+      grid-template-rows: 5% 85% 10%;
       width: 55%;
 
       .header {
@@ -198,6 +198,10 @@
             display: block;
           }
         }
+      }
+
+      .aside-menu .aside-menu-container .ul{
+        gap: 0.9rem;
       }
     }
   }

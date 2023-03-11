@@ -43,7 +43,7 @@ export default function CarouselMain() {
         featuredCarousel.results.map((item: any, index: number) => {
           return index < 4 ? (
             <div key={`film-rating-id-${item.id}`}>
-              <SwiperSlide className={styles.mainContainerCarouselImg}>
+              <SwiperSlide className={styles.mainContainerCarouselImg} key={`swiper-slide-rating-movie-${item.id}`}>
                 <div className={styles.mainCarouselImg}>
                   <Image
                     loader={() =>

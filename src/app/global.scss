@@ -29,6 +29,13 @@
       width: 80%;
     }
   }
+
+  @media screen and (min-width: 1536px) {
+    section {
+      margin-left: auto;
+      width: 100%;
+    }
+  }
 }
 
 h1,

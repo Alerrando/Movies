@@ -6,6 +6,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { FeaturedCarousel } from '../../../Home/Main';
 import styles from './styles.module.scss';
 import { getGenre, getPopularCarousel } from 'api';
+import { AiOutlineStar } from 'react-icons/ai';
 
 type GenreMovies = {
   genres: []
@@ -75,16 +76,11 @@ export default function CarouselPopular() {
                   <div className={styles.popularMovieInfo}>
                     <h4>{item.title}</h4>
 
-                    <div className={styles.genresContainer}>
-                      {Object.keys(genresTotal).length > 0 ? (
-                        genresTotal.genres.map((genre: Genre, index: number) => (
-                          <>
-                            {item.genre_ids.indexOf(genre.id) > -1 ? (
-                              <p>{genre.name}</p>
-                            ) : null}
-                          </>
-                        ))
-                      ): null}
+                    <div className={styles.rating}>
+                      <div className={styles.containerRating}>
+                        <AiOutlineStar size={18} />
+                        <span>{item.vote_average}</span>
+                      </div>
                     </div>
 
                   </div>

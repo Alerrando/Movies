@@ -7,6 +7,7 @@ import CarouselMain from '../../Home/Main/CarouselMain';
 import CarouselPopular from '../../Home/Main/CarouselPopular';
 import { MenuBarProps } from '@/app/page';
 import CarouselReleased from './CarouselReleased';
+import CarouselTrending from './CarouselTrendin';
 
 type MainProps = {
   menuBar: MenuBarProps;
@@ -29,6 +30,7 @@ export default function Main(props: MainProps) {
       <CarouselMain />
       <CarouselPopular />
       <CarouselReleased />
+      <CarouselTrending />
     </main>
   );
 }

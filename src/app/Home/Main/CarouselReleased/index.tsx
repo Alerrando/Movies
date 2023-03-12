@@ -38,33 +38,31 @@ export default function CarouselReleased() {
         {Object.keys(releasedMovies).length == 0 ? (
           <div className="spinner"></div>
         ) : (
-          releasedMovies.results.map((item: any, indexCarousel: number) => {
-            return indexCarousel < 18 ? (
-              <div key={`film-id-${item.id}`}>
-                <SwiperSlide
-                  className={styles.containerPopularMovieInfo}
-                  key={`swiper-slide-movie-popular-${item.id}`}
-                >
-                  <div className={styles.popularMovieImg}>
-                    <Image
-                      loader={() =>
-                        `https://image.tmdb.org/t/p/w500${item.backdrop_path}`
-                      }
-                      src={`https://image.tmdb.org/t/p/w500${item.backdrop_path}`}
-                      alt={`film-popular-${item.title}`}
-                      height={50}
-                      width={50}
-                      quality={100}
-                    />
-                  </div>
+          releasedMovies.results.map((item: any, indexCarousel: number) => (
+            <div key={`film-id-${item.id}`}>
+              <SwiperSlide
+                className={styles.containerPopularMovieInfo}
+                key={`swiper-slide-movie-popular-${item.id}`}
+              >
+                <div className={styles.popularMovieImg}>
+                  <Image
+                    loader={() =>
+                      `https://image.tmdb.org/t/p/w500${item.backdrop_path}`
+                    }
+                    src={`https://image.tmdb.org/t/p/w500${item.backdrop_path}`}
+                    alt={`film-popular-${item.title}`}
+                    height={50}
+                    width={50}
+                    quality={100}
+                  />
+                </div>
 
-                  <div className={styles.popularMovieInfo}>
-                    <h4>{item.title}</h4>
-                  </div>
-                </SwiperSlide>
-              </div>
-            ) : null;
-          })
+                <div className={styles.popularMovieInfo}>
+                  <h4>{item.title}</h4>
+                </div>
+              </SwiperSlide>
+            </div>
+          ))
         )}
       </Swiper>
     </>

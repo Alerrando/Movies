@@ -47,6 +47,21 @@ export async function getMoviesReleased() {
   return moviesReleased;
 }
 
+export async function getTrending() {
+  const response = await fetch(
+    `${url}/trending/movie/week?api_key=${key}`,
+    {
+      cache: 'no-store',
+      next: {
+        revalidate: 30,
+      },
+    }
+  );
+
+  const tranding = await response.json();
+  return tranding;
+}
+
 export async function getGenre() {
   const response = await fetch(
     `${url}genre/list?api_key=${key}language=en-US`,

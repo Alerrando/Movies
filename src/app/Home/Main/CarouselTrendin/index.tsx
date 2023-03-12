@@ -1,32 +1,30 @@
-import React from "react";
+import { getTrending } from "api";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { A11y, Navigation, Pagination, Scrollbar } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { FeaturedCarousel } from "../../../Home/Main";
-import styles from "./styles.module.scss";
-import { getPopularCarousel } from "api";
-import { AiOutlineStar } from "react-icons/ai";
+import { FeaturedCarousel } from "..";
+import styles from "../CarouselPopular/styles.module.scss";
 
-export default function CarouselPopular() {
-  const [popularCarousel, setPopularCarousel] = useState<FeaturedCarousel>(
+export default function CarouselTrending() {
+  const [filmsTrending, setFilmsTrending] = useState<FeaturedCarousel>(
     {} as FeaturedCarousel
   );
 
   useEffect(() => {
-    (async function () {
+    (async () => {
       try {
-        const repos = await getPopularCarousel();
-        setPopularCarousel(repos);
-      } catch (e) {
-        console.error(e);
+        const respo = await getTrending();
+        setFilmsTrending(respo);
+      } catch (error) {
+        console.log(error);
       }
     })();
   });
 
   return (
     <>
-      <h2>Movies Popular</h2>
+      <h2>Movies Trending</h2>
       <Swiper
         modules={[Navigation, Pagination, Scrollbar, A11y]}
         spaceBetween={25}
@@ -37,10 +35,10 @@ export default function CarouselPopular() {
         onSlideChange={() => console.log("slide change")}
         className={`${styles["section-container"]}`}
       >
-        {Object.keys(popularCarousel).length == 0 ? (
+        {Object.keys(filmsTrending).length == 0 ? (
           <div className="spinner"></div>
         ) : (
-          popularCarousel.results.map((item: any, indexCarousel: number) => (
+          filmsTrending.results.map((item: any, indexCarousel: number) => (
             <div key={`film-id-${item.id}`}>
               <SwiperSlide
                 className={styles.containerPopularMovieInfo}
@@ -61,13 +59,6 @@ export default function CarouselPopular() {
 
                 <div className={styles.popularMovieInfo}>
                   <h4>{item.title}</h4>
-
-                  <div className={styles.rating}>
-                    <div className={styles.containerRating}>
-                      <AiOutlineStar size={18} />
-                      <span>{item.vote_average}</span>
-                    </div>
-                  </div>
                 </div>
               </SwiperSlide>
             </div>

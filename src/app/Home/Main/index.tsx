@@ -6,6 +6,7 @@ import 'swiper/swiper-bundle.min.css';
 import CarouselMain from '../../Home/Main/CarouselMain';
 import CarouselPopular from '../../Home/Main/CarouselPopular';
 import { MenuBarProps } from '@/app/page';
+import CarouselReleased from './CarouselReleased';
 
 type MainProps = {
   menuBar: MenuBarProps;
@@ -27,6 +28,7 @@ export default function Main(props: MainProps) {
     <main className={`${menuBar.value} ${styles.main}`}>
       <CarouselMain />
       <CarouselPopular />
+      <CarouselReleased />
     </main>
   );
 }

@@ -5,20 +5,10 @@ import { A11y, Navigation, Pagination, Scrollbar } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { FeaturedCarousel } from '../../../Home/Main';
 import styles from './styles.module.scss';
-import { getGenre, getPopularCarousel } from 'api';
+import { getPopularCarousel } from 'api';
 import { AiOutlineStar } from 'react-icons/ai';
 
-type GenreMovies = {
-  genres: []
-}
-
-type Genre = {
-  id: number,
-  name: string,
-}
-
 export default function CarouselPopular() {
-  const [genresTotal, setGenresTotal] = useState<GenreMovies>({} as GenreMovies);
   const [popularCarousel, setPopularCarousel] = useState<FeaturedCarousel>(
     {} as FeaturedCarousel
   );
@@ -27,10 +17,7 @@ export default function CarouselPopular() {
     (async function () {
       try {
         const repos = await getPopularCarousel();
-        const genre = await getGenre();
         setPopularCarousel(repos);
-        setGenresTotal(genre)
-        console.log(repos)
       } catch (e) {
         console.error(e);
       }
@@ -39,7 +26,7 @@ export default function CarouselPopular() {
 
   return (
     <>
-      <h2>Movies</h2>
+      <h2>Movies Popular</h2>
       <Swiper
         modules={[Navigation, Pagination, Scrollbar, A11y]}
         spaceBetween={25}

@@ -32,6 +32,21 @@ export async function getPopularCarousel() {
   return moviesPopular;
 }
 
+export async function getMoviesReleased() {
+  const response = await fetch(
+    `${url}movie/upcoming?api_key=${key}&language=en-US&page=1`,
+    {
+      cache: 'no-store',
+      next: {
+        revalidate: 30,
+      },
+    }
+  )
+
+  const moviesReleased = await response.json();
+  return moviesReleased;
+}
+
 export async function getGenre() {
   const response = await fetch(
     `${url}genre/list?api_key=${key}language=en-US`,

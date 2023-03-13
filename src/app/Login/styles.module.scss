@@ -1,36 +1,36 @@
-.main{
+.main {
     height: 100vh;
     position: relative;
     width: 100vw;
 
-    .mainImg{
+    .mainImg {
         display: none;
     }
 
-    .mainContainer{
+    .mainContainer {
         background-color: #17181b;
         display: flex;
         flex-direction: column;
         height: 100%;
         width: 100%;
 
-        .main-container-img{
+        .main-container-img {
             height: 40%;
             width: 100%;
 
-            .img-form-login{
-                position: relative!important;
+            .img-form-login {
+                position: relative !important;
             }
         }
 
-        .form{
+        .form {
             border-radius: 10px;
             color: white;
             height: 60%;
             padding: 20px;
             width: 100%;
 
-            .form-header{
+            .form-header {
                 align-items: center;
                 display: flex;
                 justify-content: space-between;
@@ -38,10 +38,10 @@
                 margin: 0 auto;
                 width: 80%;
 
-                span{
+                span {
                     font-size: 1.4rem;
 
-                    &:hover{
+                    &:hover {
                         border-bottom: 1px solid white;
                         padding-bottom: 2px;
                     }
@@ -52,10 +52,37 @@
 }
 
 @media screen and (min-width: 764px) {
-    .main .mainImg{
-        display: block;
-        height: 100%;
-        position: absolute;
-        width: 100%;
+    .main {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        .mainImg {
+            display: block;
+            height: 100%;
+            position: absolute;
+            width: 100%;
+        }
+
+        .mainContainer{
+            flex-direction: row;
+            height: 55%;
+            width: 65%;
+            z-index: 100;
+
+            .main-container-img{
+                height: 100%;
+
+                .img-form-login{
+                    object-fit: cover;
+                }
+            }
+
+            .form{
+                background-color: black;
+                border-radius: 10px 0;
+                height: 100%;
+                width: 100%;
+            }
+        }
     }
 }

@@ -15,7 +15,11 @@ export default function LoginPage(){
                     </div>
 
                     <form className={styles.form}>
-                        
+                        <header className={styles['form-header']}>
+                            <span>Login in</span>
+                            
+                            <span>Sign in</span>
+                        </header>
                     </form>
                 </section>
             </main>

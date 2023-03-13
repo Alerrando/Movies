@@ -1,0 +1,41 @@
+.main{
+    height: 100vh;
+    position: relative;
+    width: 100vw;
+
+    .mainImg{
+        display: none;
+    }
+
+    .mainContainer{
+        background-color: #17181b;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        width: 100%;
+
+        .main-container-img{
+            height: 40%;
+            width: 100%;
+
+            .img-form-login{
+                position: relative!important;
+            }
+        }
+
+        .form{
+            border-radius: 10px;
+            height: 60%;
+            width: 100%;
+        }
+    }
+}
+
+@media screen and (min-width: 764px) {
+    .main .mainImg{
+        display: block;
+        height: 100%;
+        position: absolute;
+        width: 100%;
+    }
+}

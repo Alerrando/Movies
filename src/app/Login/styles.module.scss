@@ -1,88 +1,235 @@
 .main {
-    height: 100vh;
-    position: relative;
-    width: 100vw;
+  height: 100vh;
+  position: relative;
+  width: 100vw;
 
-    .mainImg {
-        display: none;
+  .mainImg {
+    display: none;
+  }
+
+  .mainContainer {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+
+    .main-container-img {
+      height: 40%;
+      width: 100%;
+
+      .img-form-login {
+        height: 42% !important;
+        object-fit: cover;
+      }
     }
 
-    .mainContainer {
-        background-color: #17181b;
+    .form {
+      background-color: #17181b;
+      border-radius: 15px 15px 0 0;
+      color: white;
+      display: grid;
+      grid-template-rows: 20% 60% 20%;
+      height: 70%;
+      padding: 20px 30px;
+      width: 100%;
+      z-index: 100;
+
+      .form-header {
+        align-items: flex-start;
+        display: flex;
+        justify-content: space-between;
+        height: auto;
+        margin: 0 auto;
+        width: 80%;
+
+        span {
+          cursor: pointer;
+          font-size: 1.4rem;
+
+          &.Login,
+          &.SignUp {
+            border-bottom: 1px solid white;
+            padding-bottom: 2px;
+          }
+        }
+      }
+      .formInputContainer {
+        align-items: flex-start;
+        display: flex;
+        height: auto;
+        flex-direction: column;
+        gap: 2rem;
+
+        .form-input {
+          align-items: center;
+          border-bottom: 1px solid #fff;
+          display: flex;
+          flex-direction: row;
+          gap: 20px;
+          padding-bottom: 4px;
+          width: 100%;
+
+          input {
+            background-color: transparent;
+            border: none;
+            color: white;
+            font-size: 0.9rem;
+            outline: none;
+            width: 80%;
+          }
+        }
+
+        a {
+          color: #ff007f;
+          position: absolute;
+          top: 68%;
+          text-decoration: none;
+
+          &:hover {
+            border-bottom: 1px solid #ff007f;
+            padding-bottom: 2px;
+          }
+        }
+
+        .btn {
+          background-color: red;
+          border: none;
+          border-radius: 40px;
+          cursor: pointer;
+          color: white;
+          margin: auto auto 0 auto;
+          width: 100%;
+          padding: 12px 0;
+
+          &.valid {
+            opacity: 1;
+          }
+
+          &.notValid {
+            cursor: auto;
+            opacity: 0.6;
+          }
+        }
+      }
+
+      .formContainerLoginApp {
+        align-items: center;
         display: flex;
         flex-direction: column;
+        justify-content: flex-end;
         height: 100%;
+        gap: 1rem;
+        padding-bottom: 10px;
         width: 100%;
 
-        .main-container-img {
-            height: 40%;
-            width: 100%;
+        .login-apps-text {
+          align-items: center;
+          color: black;
+          display: flex;
+          justify-content: space-between;
+          width: 100%;
 
-            .img-form-login {
-                position: relative !important;
-            }
-        }
-
-        .form {
-            border-radius: 10px;
+          span {
             color: white;
-            height: 60%;
-            padding: 20px;
-            width: 100%;
+            font-size: 1rem;
+          }
 
-            .form-header {
-                align-items: center;
-                display: flex;
-                justify-content: space-between;
-                height: auto;
-                margin: 0 auto;
-                width: 80%;
-
-                span {
-                    font-size: 1.4rem;
-
-                    &:hover {
-                        border-bottom: 1px solid white;
-                        padding-bottom: 2px;
-                    }
-                }
-            }
+          .traco {
+            background-color: #fff;
+            height: 1px;
+            width: 30%;
+          }
         }
+
+        .login-apps {
+          align-items: center;
+          display: flex;
+          justify-content: space-between;
+          height: auto;
+          width: 100%;
+
+          .app {
+            color: #000;
+            cursor: pointer;
+            border-radius: 50%;
+            height: 1rem;
+            transition: all 2s ease-in-out;
+            width: 1rem;
+
+            svg {
+              color: white;
+            }
+
+            .facebook:hover {
+              color: blue;
+            }
+
+            .twitter:hover {
+              color: #1da1f2;
+            }
+
+            .google:hover {
+              color: #db4437;
+            }
+          }
+        }
+      }
     }
+  }
 }
 
 @media screen and (min-width: 764px) {
-    .main {
-        align-items: center;
-        display: flex;
-        justify-content: center;
-        .mainImg {
-            display: block;
-            height: 100%;
-            position: absolute;
-            width: 100%;
-        }
-
-        .mainContainer{
-            flex-direction: row;
-            height: 55%;
-            width: 65%;
-            z-index: 100;
-
-            .main-container-img{
-                height: 100%;
-
-                .img-form-login{
-                    object-fit: cover;
-                }
-            }
-
-            .form{
-                background-color: black;
-                border-radius: 10px 0;
-                height: 100%;
-                width: 100%;
-            }
-        }
+  .main {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    .mainImg {
+      display: block;
+      height: 100%;
+      position: absolute;
+      width: 100%;
     }
+
+    .mainContainer {
+      flex-direction: row;
+      height: 70%;
+      width: 75%;
+      z-index: 100;
+
+      .main-container-img {
+        height: 100%;
+
+        .img-form-login {
+          height: 100% !important;
+          position: relative !important;
+        }
+      }
+
+      .form {
+        background-color: black;
+        border-radius: 10px 0;
+        height: 100%;
+        padding: 20px 60px;
+        width: 100%;
+
+        .formInputContainer {
+          gap: 3rem;
+
+          a {
+            top: 48.6%;
+          }
+
+          .btn {
+            padding: 16px 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1536px) {
+  .mainContainer{
+    height: 40%;
+  }
 }

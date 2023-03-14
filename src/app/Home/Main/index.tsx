@@ -3,8 +3,8 @@ import styles from './style.module.scss';
 import 'swiper/swiper.min.css';
 import 'swiper/swiper-element.min.css';
 import 'swiper/swiper-bundle.min.css';
-import CarouselMain from '../../Home/Main/CarouselMain';
-import CarouselPopular from '../../Home/Main/CarouselPopular';
+import CarouselMain from '../../home/Main/CarouselMain';
+import CarouselPopular from '../../home/Main/CarouselPopular';
 import CarouselReleased from './CarouselReleased';
 import CarouselTrending from './CarouselTrending';
 import { MenuBarProps } from '../page';
@@ -22,8 +22,6 @@ export type FeaturedCarousel = {
 
 export default function Main(props: MainProps) {
   const { menuBar } = props;
-
-  
 
   return (
     <main className={`${menuBar.value} ${styles.main}`}>

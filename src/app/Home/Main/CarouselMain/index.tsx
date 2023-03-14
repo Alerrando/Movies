@@ -1,11 +1,12 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { A11y, Navigation, Pagination, Scrollbar } from 'swiper';
-import { Popover } from '@headlessui/react';
+import { Popover, Transition } from '@headlessui/react';
 import Image from 'next/image';
-import { AiOutlineStar } from 'react-icons/ai';
+import { AiOutlineHeart, AiOutlineStar } from 'react-icons/ai';
+import { HiViewfinderCircle } from 'react-icons/hi2'
 import styles from './styles.module.scss';
 import { getRatedCarousel } from 'api';
-import { useEffect, useState } from 'react';
+import { Fragment, useEffect, useState } from 'react';
 import { FeaturedCarousel } from '..';
 
 export default function CarouselMain() {
@@ -79,7 +80,32 @@ export default function CarouselMain() {
                     <button className={styles.btn}>View More</button>
 
                     <Popover className={styles.moreContainer}>
-                      <Popover.Button className={styles.more}>+</Popover.Button>
+                      <Popover.Button className={styles.more}>
+                        <span>+</span>
+                      </Popover.Button>
+
+                      <Transition
+                        as={Fragment}
+                        enter="transition ease-out duration-200"
+                        enterFrom="opacity-0 translate-y-1"
+                        enterTo="opacity-100 translate-y-0"
+                        leave="transition ease-in duration-150"
+                        leaveFrom="opacity-100 translate-y-0"
+                        leaveTo="opacity-0 translate-y-1"
+                      >
+                        <Popover.Panel className={styles['popover-painel']}>
+                          <div className={styles['popover-painel-container']}>
+                            <div className={styles['popover-item']}>
+                              <AiOutlineHeart size={26} />
+                              <span>Favorites</span>
+                            </div>
+                            <div className={styles['popover-item']}>
+                              <HiViewfinderCircle size={26} />
+                              <span>Views</span>
+                            </div>
+                          </div>
+                        </Popover.Panel>
+                      </Transition>
                     </Popover>
                   </div>
                 </div>

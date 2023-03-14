@@ -4,8 +4,8 @@ import Image from 'next/image';
 import React, { useState } from 'react';
 import { FcGoogle } from 'react-icons/fc';
 import { BsFacebook, BsTwitter } from 'react-icons/bs';
-import FormLogin from '../Login/FormLogin';
-import FormSignUp from '../Login/FormSignUp';
+import FormLogin from '../login/FormLogin';
+import FormSignUp from '../login/FormSignUp';
 import styles from './styles.module.scss';
 
 type LoginSignUp = {

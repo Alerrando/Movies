@@ -1,3 +1,5 @@
+'use client'
+
 import React from "react";
 import Aside from "./Aside";
 import Header from "./Header";

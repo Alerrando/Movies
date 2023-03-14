@@ -3,7 +3,7 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import { A11y, Navigation, Pagination, Scrollbar } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { FeaturedCarousel } from "../../../Home/Main";
+import { FeaturedCarousel } from "../../../home/Main";
 import styles from "./styles.module.scss";
 import { getPopularCarousel } from "api";
 import { AiOutlineStar } from "react-icons/ai";

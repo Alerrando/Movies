@@ -11,7 +11,8 @@ import { MdMovie, MdOutlineLogout } from 'react-icons/md';
 import { BiHelpCircle } from 'react-icons/bi';
 import * as React from 'react';
 import styles from './style.module.scss';
-import { MenuBarProps } from '@/app/page';
+import Link from 'next/link';
+import { MenuBarProps } from '../page';
 
 type AsideProps = {
   menuBar: MenuBarProps;
@@ -98,10 +99,10 @@ export default function Aside(props: AsideProps) {
         </section>
 
         <footer className={styles['aside-footer']}>
-          <div className={styles['aside-footer-container']}>
+          <Link href="/login" className={styles['aside-footer-container']}>
             <span>Sign in</span>
             <MdOutlineLogout size={18} />
-          </div>
+          </Link>
         </footer>
       </div>
     </aside>

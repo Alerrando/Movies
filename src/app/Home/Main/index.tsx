@@ -5,9 +5,9 @@ import 'swiper/swiper-element.min.css';
 import 'swiper/swiper-bundle.min.css';
 import CarouselMain from '../../Home/Main/CarouselMain';
 import CarouselPopular from '../../Home/Main/CarouselPopular';
-import { MenuBarProps } from '@/app/page';
 import CarouselReleased from './CarouselReleased';
-import CarouselTrending from './CarouselTrendin';
+import CarouselTrending from './CarouselTrending';
+import { MenuBarProps } from '../page';
 
 type MainProps = {
   menuBar: MenuBarProps;

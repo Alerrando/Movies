@@ -1,30 +1,42 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import * as React from 'react';
 import styles from './style.module.scss';
 
 type HeaderProps = {
   currentPage: string;
+  style: React.CSSProperties | undefined,
 };
 
 export default function Header(props: HeaderProps) {
-  const { currentPage } = props;
+  const { currentPage, style } = props;
 
   return (
-    <header className={styles.header}>
+    <header className={styles.header} style={style}>
       <div className={styles.headerContainer}>
         <ul className={`${styles[currentPage]} ${styles.ul}`}>
-          <li translate="no" className={styles.li}>
-            Home
-          </li>
-          <li translate="no" className={styles.li}>
-            Movies
-          </li>
-          <li translate="no" className={styles.li}>
-            Series
-          </li>
-          <li translate="no" className={styles.li}>
-            Tv Shows
-          </li>
+          <Link className={styles.a} href='/home'>
+            <li translate="no" className={styles.li}>Home</li>
+          </Link>
+
+          <Link className={styles.a} href='/movies'>
+            <li translate="no" className={styles.li}>
+              Movies
+            </li>
+          </Link>
+
+          <Link className={styles.a} href="/series">
+            <li translate="no" className={styles.li}>
+              Series
+            </li>
+          </Link>
+
+          <Link className={styles.a} href="/tv-shows">
+            <li translate="no" className={styles.li}>
+              Tv Shows
+            </li>
+          </Link>
+
         </ul>
 
         <div className={styles.profile}>

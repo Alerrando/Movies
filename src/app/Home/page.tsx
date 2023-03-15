@@ -22,7 +22,7 @@ export type MenuBarProps = {
       <div className="body-container">
         <Aside menuBar={menuBar} setMenuBar={setMenuBar} />
         <section>
-          <Header currentPage={'page1'} />
+          <Header currentPage={'page1'} style={undefined} />
           <Main menuBar={menuBar} />
         </section>
       </div>

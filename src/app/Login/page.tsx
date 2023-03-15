@@ -1,12 +1,13 @@
 'use client'
 
 import Image from 'next/image';
-import React, { useState } from 'react';
+import React, { useState, CSSProperties } from 'react';
 import { FcGoogle } from 'react-icons/fc';
 import { BsFacebook, BsTwitter } from 'react-icons/bs';
 import FormLogin from '../login/FormLogin';
 import FormSignUp from '../login/FormSignUp';
 import styles from './styles.module.scss';
+import Header from '../home/Header'
 
 type LoginSignUp = {
   login: 'Login' | 'SignUp';
@@ -18,9 +19,13 @@ const inicialValue: LoginSignUp = {
 
 export default function LoginPage() {
   const [loginSignUp, setLoginSignUp] = useState(inicialValue);
+  const properties :CSSProperties = {
+    position: 'absolute'
+  }
 
   return (
     <>
+      <Header currentPage={''} style={properties} />
       <main className={styles.main}>
         <div className={styles.mainImg}>
           <Image

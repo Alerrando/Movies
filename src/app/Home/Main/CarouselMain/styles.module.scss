@@ -12,7 +12,7 @@
   margin-left: 0;
   position: relative;
   overflow: hidden;
-  width: 200%;
+  width: 100%;
 
   .spinner {
     height: 56px;
@@ -27,10 +27,6 @@
       #0000 calc(100% - 9px),
       #000 0
     );
-  }
-
-  .swiper-pagination {
-    width: 50%;
   }
 
   .mainContainerCarouselImg {
@@ -111,9 +107,8 @@
     .movieMore {
       align-items: center;
       display: flex;
-      flex-direction: row;
-      gap: 1.3rem;
-      width: auto;
+      justify-content: space-between;
+      width: 100%;
 
       .btn {
         border: none;
@@ -196,7 +191,7 @@
     min-height: 24rem;
     max-height: 25rem;
     margin-left: auto;
-    width: 155%;
+    width: 100%;
 
     .mainContainerCarouselImg {
       height: 100%;
@@ -211,6 +206,13 @@
           font-size: 2.5rem;
           width: 40%;
         }
+      }
+      
+      .movieMore{
+        flex-direction: row;
+        justify-content: flex-start;
+        gap: 1.3rem;
+        width: auto;
       }
     }
   }

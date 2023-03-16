@@ -29,7 +29,7 @@ export default function CarouselMain() {
     <Swiper
       modules={[Navigation, Pagination, Scrollbar, A11y]}
       spaceBetween={25}
-      slidesPerView={2}
+      slidesPerView={1}
       loop={true}
       navigation
       pagination={{ clickable: true }}

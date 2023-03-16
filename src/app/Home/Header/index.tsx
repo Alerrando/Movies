@@ -4,17 +4,16 @@ import * as React from 'react';
 import styles from './style.module.scss';
 
 type HeaderProps = {
-  currentPage: string;
   style: React.CSSProperties | undefined,
 };
 
 export default function Header(props: HeaderProps) {
-  const { currentPage, style } = props;
+  const { style } = props;
 
   return (
     <header className={styles.header} style={style}>
       <div className={styles.headerContainer}>
-        <ul className={`${styles[currentPage]} ${styles.ul}`}>
+        <ul className={`${styles.ul}`}>
           <Link className={styles.a} href='/home'>
             <li translate="no" className={styles.li}>Home</li>
           </Link>

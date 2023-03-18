@@ -1,0 +1,23 @@
+.bodyContainer {
+    display: flex;
+    height: 100vh;
+    overflow-x: hidden;
+    width: 100vw;
+
+    section {
+        height: 100%;
+        width: 100%;
+
+        .swiper-button-prev,
+        .swiper-button-next {
+            color: black;
+        }
+    }
+
+    @media screen and (min-width: 1024px) {
+        section {
+            margin-left: auto;
+            width: 100%;
+        }
+    }
+}

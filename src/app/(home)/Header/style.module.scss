@@ -26,44 +26,23 @@
     padding: 20px 0;
     width: 80%;
 
-    .ul {
+    .search-container {
+      align-items: center;
+      background-color: #666;
+      border-radius: 25px;
       display: flex;
       flex-direction: row;
-      gap: 0.8rem;
-      list-style-type: none;
-      
-      .a{
-        text-decoration: none;
-        .li {
-          cursor: pointer;
-          font-size: 0.8rem;
-          padding-bottom: 0.2rem;
-          position: relative;
-  
-          &:hover::after {
-            animation: bar 0.6s forwards;
-            background-color: #f00;
-            bottom: 0;
-            content: '';
-            height: 1px;
-            left: 0;
-            position: absolute;
-          }
-        }
-      }
-      &:nth-child(1){
-        color: red;
-      }
-      &:nth-child(2){
-        color: yellow;
-      }
-      &:nth-child(3){
-        color: purple;
-      }
-      &:nth-child(4){
-        color: orange;
-      }
+      gap: 10px;
+      height: auto;
+      padding: 8px 10px;
+      width: 30%;
 
+      input {
+        background-color: transparent;
+        color: white;
+        border: none;
+        outline: none;
+      }
     }
 
     .profile {
@@ -87,23 +66,22 @@
 }
 
 @media (min-width: 1024px) {
-  .header{
+  .header {
     position: relative;
 
     .headerContainer {
       width: 65%;
-  
+
       .ul {
         gap: 2rem;
 
-        .a{
+        .a {
           .li {
             font-size: 1rem;
           }
         }
-  
       }
-  
+
       .profile {
         height: 2.8125rem;
         margin-right: 5rem;

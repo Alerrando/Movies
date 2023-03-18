@@ -29,6 +29,10 @@
     );
   }
 
+  .swiper-pagination span {
+    background-color: limegreen!important;
+  }
+
   .mainContainerCarouselImg {
     height: auto;
     position: relative;
@@ -190,7 +194,7 @@
   .mainContainer {
     min-height: 24rem;
     max-height: 25rem;
-    margin-left: auto;
+    margin: auto 0 0 auto;
     width: 100%;
 
     .mainContainerCarouselImg {

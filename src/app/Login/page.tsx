@@ -25,7 +25,7 @@ export default function LoginPage() {
 
   return (
     <>
-      <Header currentPage={''} style={properties} />
+      <Header style={properties} />
       <main className={styles.main}>
         <div className={styles.mainImg}>
           <Image

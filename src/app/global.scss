@@ -5,39 +5,6 @@
   width: $width;
 }
 
-.body-container {
-  @include height-width(100vh, 100vw);
-  display: flex;
-  overflow-x: hidden;
-
-  section {
-    @include height-width(100%, 100%);
-
-    .swiper-button-prev,
-    .swiper-button-next {
-      color: white;
-    }
-
-    .swiper-pagination span {
-      background-color: limegreen;
-    }
-  }
-
-  @media screen and (min-width: 1024px) {
-    section {
-      margin-left: auto;
-      width: 80%;
-    }
-  }
-
-  @media screen and (min-width: 1536px) {
-    section {
-      margin-left: auto;
-      width: 100%;
-    }
-  }
-}
-
 h1,
 h2,
 span,

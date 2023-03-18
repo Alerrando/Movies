@@ -3,11 +3,11 @@ import styles from './style.module.scss';
 import 'swiper/swiper.min.css';
 import 'swiper/swiper-element.min.css';
 import 'swiper/swiper-bundle.min.css';
-import CarouselMain from '../../home/Main/CarouselMain';
-import CarouselPopular from '../../home/Main/CarouselPopular';
 import CarouselReleased from './CarouselReleased';
 import CarouselTrending from './CarouselTrending';
 import { MenuBarProps } from '../page';
+import CarouselMain from './CarouselMain';
+import CarouselPopular from './CarouselPopular';
 
 type MainProps = {
   menuBar: MenuBarProps;

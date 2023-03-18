@@ -42,22 +42,23 @@ export default function Aside(props: AsideProps) {
             <h2 translate="no">Menu</h2>
 
             <ul className={styles.ul}>
-              <div className={styles['menu-dashboard']}>
+              <Link href="/" className={styles['menu-dashboard']}>
                 <BsHouseDoor size={18} />
                 <li>Home</li>
-              </div>
-              <div className={styles['menu-dashboard']}>
+              </Link>
+
+              <Link href="/discovery" className={styles['menu-dashboard']}>
                 <AiOutlineCompass size={18} />
                 <li>Discovery</li>
-              </div>
-              <div className={styles['menu-dashboard']}>
+              </Link>
+              <Link href="/coming-soon" className={styles['menu-dashboard']}>
                 <BsAlarm size={18} />
                 <li>Coming Soon</li>
-              </div>
-              <div className={styles['menu-dashboard']}>
+              </Link>
+              <Link href="/community" className={styles['menu-dashboard']}>
                 <BsPeople size={18} />
                 <li>Community</li>
-              </div>
+              </Link>
             </ul>
           </div>
 
@@ -65,22 +66,22 @@ export default function Aside(props: AsideProps) {
             <h2 translate="no">Library</h2>
 
             <ul className={styles.ul}>
-              <div className={styles['menu-dashboard']}>
+              <Link href="/recents" className={styles['menu-dashboard']}>
                 <AiOutlineClockCircle size={18} />
                 <li>Recents</li>
-              </div>
-              <div className={styles['menu-dashboard']}>
+              </Link>
+              <Link href="/favorites" className={styles['menu-dashboard']}>
                 <AiOutlineHeart size={18} />
                 <li>Favorites</li>
-              </div>
-              <div className={styles['menu-dashboard']}>
+              </Link>
+              <Link href="/top-rated" className={styles['menu-dashboard']}>
                 <AiOutlineStar size={18} />
                 <li>Top Rated</li>
-              </div>
-              <div className={styles['menu-dashboard']}>
+              </Link>
+              <Link href="/downloaded" className={styles['menu-dashboard']}>
                 <BsDownload size={18} />
                 <li>Downloaded</li>
-              </div>
+              </Link>
             </ul>
           </div>
 

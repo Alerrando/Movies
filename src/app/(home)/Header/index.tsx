@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import * as React from 'react';
+import { FiSearch } from 'react-icons/fi';
 import styles from './style.module.scss';
 
 type HeaderProps = {
@@ -13,30 +14,10 @@ export default function Header(props: HeaderProps) {
   return (
     <header className={styles.header} style={style}>
       <div className={styles.headerContainer}>
-        <ul className={`${styles.ul}`}>
-          <Link className={styles.a} href='/home'>
-            <li translate="no" className={styles.li}>Home</li>
-          </Link>
-
-          <Link className={styles.a} href='/movies'>
-            <li translate="no" className={styles.li}>
-              Movies
-            </li>
-          </Link>
-
-          <Link className={styles.a} href="/series">
-            <li translate="no" className={styles.li}>
-              Series
-            </li>
-          </Link>
-
-          <Link className={styles.a} href="/tv-shows">
-            <li translate="no" className={styles.li}>
-              Tv Shows
-            </li>
-          </Link>
-
-        </ul>
+        <div className={styles['search-container']}>
+            <FiSearch size={18} />
+            <input type="text" placeholder="Search" />
+        </div>
 
         <div className={styles.profile}>
           <Image

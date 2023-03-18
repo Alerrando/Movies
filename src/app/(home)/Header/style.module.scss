@@ -21,10 +21,10 @@
     align-items: center;
     display: flex;
     height: auto;
-    justify-content: space-between;
+    justify-content: space-around;
     margin-left: auto;
     padding: 20px 0;
-    width: 80%;
+    width: 70%;
 
     .search-container {
       align-items: center;
@@ -70,6 +70,7 @@
     position: relative;
 
     .headerContainer {
+      justify-content: space-between;
       width: 65%;
 
       .ul {

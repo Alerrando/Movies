@@ -1,8 +1,7 @@
 import styles from "./styles.module.scss";
 import { GrClose } from "react-icons/gr";
 import { Disclosure, Transition } from "@headlessui/react";
-import { ChevronUpIcon } from '@heroicons/react/20/solid'
-
+import { ChevronUpIcon } from "@heroicons/react/20/solid";
 
 type FilterProps = {
   setFilterMenu: (filterMenu: boolean) => void;
@@ -16,24 +15,35 @@ export default function Filter({ setFilterMenu }: FilterProps) {
           <GrClose size={26} onClick={() => setFilterMenu(false)} />
         </header>
 
-        <section className={styles['filter-section-questions-answers']}>
+        <section className={styles["filter-section-questions-answers"]}>
           <Disclosure>
             {({ open }) => (
-                <>
+              <>
                 <Disclosure.Button className={styles["filter-question"]}>
                   Genres
-                  <ChevronUpIcon className={`${open ? `${styles['close']}` : ''} ${styles['open']}`}  />
+                  <ChevronUpIcon
+                    className={`${open ? `${styles["close"]}` : ""} ${
+                      styles["open"]
+                    }`}
+                  />
                 </Disclosure.Button>
 
-
-                <Disclosure.Panel className={styles["filter-answers"]}>
-                  Yes! You can purchase a license that you can share with your
-                  entire team.
-                </Disclosure.Panel>
-                
-                </>
+                <Transition
+                  enter={styles["enter"]}
+                  enterFrom={styles["enter-from"]}
+                  enterTo={styles["enter-to"]}
+                  leave={styles["leave"]}
+                  leaveFrom={styles["leave-from"]}
+                  leaveTo={styles["leave-to"]}
+                >
+                  <Disclosure.Panel className={styles["filter-answers"]}>
+                    Yes! You can purchase a license that you can share with your
+                    entire team.
+                  </Disclosure.Panel>
+                </Transition>
+              </>
             )}
-            </Disclosure>
+          </Disclosure>
         </section>
       </div>
     </div>

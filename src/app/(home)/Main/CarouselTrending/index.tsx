@@ -1,12 +1,18 @@
 import { getTrending } from "api";
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import { AiOutlineHeart } from "react-icons/ai";
+import { HiOutlineViewfinderCircle } from "react-icons/hi2";
 import { A11y, Navigation, Pagination, Scrollbar } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { FeaturedCarousel } from "..";
+import { FeaturedCarousel, FeaturedFilmType } from "..";
 import styles from "../CarouselPopular/styles.module.scss";
 
-export default function CarouselTrending() {
+type CarouselTrendingProps = {
+  setFeaturedFilm: (featuredFilm: FeaturedFilmType) => void,
+}
+
+export default function CarouselTrending({ setFeaturedFilm }: CarouselTrendingProps) {
   const [filmsTrending, setFilmsTrending] = useState<FeaturedCarousel>(
     {} as FeaturedCarousel
   );
@@ -59,6 +65,17 @@ export default function CarouselTrending() {
 
                 <div className={styles.popularMovieInfo}>
                   <h4>{item.title}</h4>
+
+                  <div className={styles['views-favorites']}>
+                    <div className={styles['container-views-favorites']}>
+                      <div className={styles["container-views"]}>
+                        <HiOutlineViewfinderCircle size={18} onClick={() => setFeaturedFilm(item)} />
+                      </div>
+                    <div className={styles['container-favorites']}>
+                      <AiOutlineHeart size={18} />
+                    </div>
+                    </div>
+                  </div>
                 </div>
               </SwiperSlide>
             </div>

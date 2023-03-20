@@ -3,12 +3,17 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import { A11y, Navigation, Pagination, Scrollbar } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { FeaturedCarousel } from "../../../home/Main";
 import styles from "./styles.module.scss";
 import { getPopularCarousel } from "api";
-import { AiOutlineStar } from "react-icons/ai";
+import { AiOutlineHeart, AiOutlineStar } from "react-icons/ai";
+import { FeaturedCarousel, FeaturedFilmType } from "..";
+import { HiOutlineViewfinderCircle } from "react-icons/hi2";
 
-export default function CarouselPopular() {
+type CarouselPopularProps = {
+  setFeaturedFilm: (featuredFilm: FeaturedFilmType) => void,
+}
+
+export default function CarouselPopular({ setFeaturedFilm }: CarouselPopularProps) {
   const [popularCarousel, setPopularCarousel] = useState<FeaturedCarousel>(
     {} as FeaturedCarousel
   );
@@ -63,9 +68,20 @@ export default function CarouselPopular() {
                   <h4>{item.title}</h4>
 
                   <div className={styles.rating}>
-                    <div className={styles.containerRating}>
+                    <div className={styles['container-rating']}>
                       <AiOutlineStar size={18} />
                       <span>{item.vote_average}</span>
+                    </div>
+                  </div>
+
+                  <div className={styles['views-favorites']}>
+                    <div className={styles['container-views-favorites']}>
+                      <div className={styles["container-views"]}>
+                        <HiOutlineViewfinderCircle size={18} onClick={() => setFeaturedFilm(item)} />
+                      </div>
+                    <div className={styles['container-favorites']}>
+                      <AiOutlineHeart size={18} />
+                    </div>
                     </div>
                   </div>
                 </div>

@@ -8,6 +8,7 @@ import CarouselTrending from './CarouselTrending';
 import { MenuBarProps } from '../page';
 import CarouselMain from './CarouselMain';
 import CarouselPopular from './CarouselPopular';
+import FeaturedFilm from './FeaturedFilm';
 
 type MainProps = {
   menuBar: MenuBarProps;
@@ -20,15 +21,34 @@ export type FeaturedCarousel = {
   total_pages: number;
 };
 
+export type FeaturedFilmType = {
+  adult: boolean,
+  backdrop_path: string | null,
+  genre_ids: number[],
+  id: number,
+  original_language: string,
+  original_title: string,
+  overview: string | null,
+  popularity: number,
+  poster_path: string,
+  release_date: string,
+  title: string,
+  video: boolean,
+  vote_average: number,
+  vote_count: number,
+}
+
 export default function Main(props: MainProps) {
+  const [featuredFilm, setFeaturedFilm] = React.useState<FeaturedFilmType>({} as FeaturedFilmType);
   const { menuBar } = props;
 
   return (
     <main className={`${menuBar.value} ${styles.main}`}>
       <CarouselMain />
-      <CarouselPopular />
-      <CarouselReleased />
-      <CarouselTrending />
+      <CarouselPopular setFeaturedFilm={setFeaturedFilm} />
+      <CarouselReleased setFeaturedFilm={setFeaturedFilm} />
+      <CarouselTrending setFeaturedFilm={setFeaturedFilm} />
+      {Object.keys(featuredFilm).length > 0 ? <FeaturedFilm featuredFilm={featuredFilm} /> : null}
     </main>
   );
 }

@@ -1,0 +1,48 @@
+.featuredFilm{
+    height: 25rem;
+    position: relative;
+    width: 100%;
+
+    .TabList{
+        bottom: 10%;
+        right: 25%;
+        position: absolute;
+        z-index: 100;
+
+        .tabble{
+            background: transparent;
+            border: none;
+            color: white;
+            display: block;
+            font-size: 1rem;
+            outline: none;
+
+            &.open:after{
+                content: '';
+                background-color: #f00;
+                border-radius: 25px;
+                bottom: -18px;
+                display: block;
+                height: .5rem;
+                left: 0; 
+                margin-left: auto; 
+                margin-right: auto; 
+                right: 0; 
+                position: absolute;
+                width: 15%;
+                z-index: 100;
+            }
+
+        }
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .featuredFilm{
+        height: 35rem;
+
+        img{
+            height: 99%!important;
+        }
+    }
+}

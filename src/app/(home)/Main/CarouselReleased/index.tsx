@@ -1,12 +1,18 @@
 import React, { useState, useEffect } from "react";
-import { FeaturedCarousel } from "..";
+import { FeaturedCarousel, FeaturedFilmType } from "..";
 import { getMoviesReleased } from "api";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { A11y, Navigation, Pagination, Scrollbar } from "swiper";
 import styles from "../CarouselPopular/styles.module.scss";
 import Image from "next/image";
+import { HiOutlineViewfinderCircle } from "react-icons/hi2";
+import { AiOutlineHeart } from "react-icons/ai";
 
-export default function CarouselReleased() {
+type CarouselReleasedProps = {
+  setFeaturedFilm: (featuredFilm: FeaturedFilmType) => void,
+}
+
+export default function CarouselReleased({ setFeaturedFilm }: CarouselReleasedProps) {
   const [releasedMovies, setReleasedMovies] = useState<FeaturedCarousel>(
     {} as FeaturedCarousel
   );
@@ -59,6 +65,17 @@ export default function CarouselReleased() {
 
                 <div className={styles.popularMovieInfo}>
                   <h4>{item.title}</h4>
+
+                  <div className={styles['views-favorites']}>
+                    <div className={styles['container-views-favorites']}>
+                      <div className={styles["container-views"]}>
+                        <HiOutlineViewfinderCircle size={18} onClick={() => setFeaturedFilm(item)} />
+                      </div>
+                    <div className={styles['container-favorites']}>
+                      <AiOutlineHeart size={18} />
+                    </div>
+                    </div>
+                  </div>
                 </div>
               </SwiperSlide>
             </div>

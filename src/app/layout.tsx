@@ -2,7 +2,7 @@
 
 import { Provider } from 'react-redux'
 import { store } from 'store'
-import './global.scss'
+import 'css/global.scss'
 
 export default function RootLayout({
   children,

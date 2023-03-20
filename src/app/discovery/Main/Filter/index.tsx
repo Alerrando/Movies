@@ -1,4 +1,5 @@
 import styles from "./styles.module.scss";
+import 'css/animation.scss'
 import { GrClose } from "react-icons/gr";
 import { Disclosure, Transition } from "@headlessui/react";
 import { ChevronUpIcon } from "@heroicons/react/20/solid";
@@ -29,12 +30,12 @@ export default function Filter({ setFilterMenu }: FilterProps) {
                 </Disclosure.Button>
 
                 <Transition
-                  enter={styles["enter"]}
-                  enterFrom={styles["enter-from"]}
-                  enterTo={styles["enter-to"]}
-                  leave={styles["leave"]}
-                  leaveFrom={styles["leave-from"]}
-                  leaveTo={styles["leave-to"]}
+                  enter="enter"
+                  enterFrom="enter-from"
+                  enterTo="enter-to"
+                  leave="leave"
+                  leaveFrom="leave-from"
+                  leaveTo="leave-to"
                 >
                   <Disclosure.Panel className={styles["filter-answers"]}>
                     Yes! You can purchase a license that you can share with your

@@ -4,7 +4,7 @@ import React from "react";
 import Aside from "./Aside";
 import Header from "./Header";
 import Main from "./Main";
-import "../global.scss";
+import "css/global.scss";
 
 export type MenuBarProps = {
   value: string;

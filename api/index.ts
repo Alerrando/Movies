@@ -75,4 +75,4 @@ export async function getGenre() {
 
   const genre = await response.json();
   return genre;
-}
+  }

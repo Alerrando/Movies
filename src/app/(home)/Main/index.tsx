@@ -24,6 +24,7 @@ export type FeaturedCarousel = {
 export type FeaturedFilmType = {
   adult: boolean,
   backdrop_path: string | null,
+  duration: string,
   genre_ids: number[],
   id: number,
   original_language: string,

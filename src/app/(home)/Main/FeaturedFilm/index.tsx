@@ -3,12 +3,15 @@ import Image from "next/image";
 import { Fragment } from "react";
 import { FeaturedFilmType } from "..";
 import styles from "./styles.module.scss";
+import { AiOutlineStar } from 'react-icons/ai'
 
 type FeaturedFilmProps = {
   featuredFilm: FeaturedFilmType;
 };
 
 export default function FeaturedFilm({ featuredFilm }: FeaturedFilmProps) {
+  console.log(featuredFilm)
+
   return (
     <section className={styles.featuredFilm}>
       <Image
@@ -34,9 +37,25 @@ export default function FeaturedFilm({ featuredFilm }: FeaturedFilmProps) {
               </button>
             )}
           </Tab>
+          <Tab as={Fragment}>
+            {({ selected }) => (
+              <button
+                className={
+                  `${styles['tabble']} ${styles[selected ? "open" : "close"]}`
+                }
+              >
+                SIMILAR
+              </button>
+            )}
+          </Tab>
         </Tab.List>
-        <Tab.Panels>
-          <Tab.Panel>Content 1</Tab.Panel>
+        <Tab.Panels className={styles.TabPanel}>
+          <Tab.Panel className={styles['panel']}>
+            <AiOutlineStar size={18} />
+          </Tab.Panel>
+          <Tab.Panel className={styles['panel']}>
+            
+          </Tab.Panel>
         </Tab.Panels>
       </Tab.Group>
     </section>

@@ -3,18 +3,26 @@
     position: relative;
     width: 100%;
 
-    .TabList{
-        bottom: 10%;
-        right: 25%;
+    .TabPanel, .TabList{
         position: absolute;
         z-index: 100;
+    }
+
+    .TabList{
+        bottom: 10%;
+        display: flex;
+        flex-direction: row;
+        gap: 1.5rem;
+        right: 25%;
 
         .tabble{
             background: transparent;
             border: none;
             color: white;
+            cursor: pointer;
             display: block;
             font-size: 1rem;
+            position: relative;
             outline: none;
 
             &.open:after{
@@ -29,11 +37,16 @@
                 margin-right: auto; 
                 right: 0; 
                 position: absolute;
-                width: 15%;
+                width: 29px;
                 z-index: 100;
             }
 
         }
+    }
+
+    .TabPanel{
+        left: 10%;
+        top: 40%;
     }
 }
 

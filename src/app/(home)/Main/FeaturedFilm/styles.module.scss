@@ -21,7 +21,7 @@
             color: white;
             cursor: pointer;
             display: block;
-            font-size: 1rem;
+            font-size: .7rem;
             position: relative;
             outline: none;
 
@@ -47,6 +47,13 @@
     .TabPanel{
         left: 10%;
         top: 40%;
+
+        .panel, .panel-genres{
+            align-items: center;
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+        }
     }
 }
 
@@ -56,6 +63,10 @@
 
         img{
             height: 99%!important;
+        }
+        
+        .TabList .tabble{
+            font-size: 1rem;
         }
     }
 }

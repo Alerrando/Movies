@@ -1,8 +1,8 @@
 "use client";
 
 import React from "react";
-import Aside from "./Aside";
-import Header from "./Header";
+import Aside from "../../components/Aside";
+import Header from "../../components/Header";
 import Main from "./Main";
 import "css/global.scss";
 
@@ -19,7 +19,6 @@ export default function HomePage() {
 
   return (
     <div className="body-container">
-      <Aside menuBar={menuBar} setMenuBar={setMenuBar} />
       <section>
         <Header style={undefined} />
         <Main menuBar={menuBar} />

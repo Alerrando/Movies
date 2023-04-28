@@ -12,10 +12,9 @@
   background-color: #17181b;
   display: flex;
   height: auto;
-  justify-content: start;
-  position: fixed;
+  justify-content: flex-start;
+  position: block;
   width: 100%;
-  z-index: 100;
 
   .headerContainer {
     align-items: center;

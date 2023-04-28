@@ -29,7 +29,6 @@ export default function CarouselMain() {
   return (
     <Swiper
       modules={[Navigation, Pagination, Scrollbar, A11y]}
-      spaceBetween={25}
       slidesPerView={1}
       loop={true}
       navigation

@@ -12,28 +12,26 @@ import { BiHelpCircle } from 'react-icons/bi';
 import * as React from 'react';
 import styles from './style.module.scss';
 import Link from 'next/link';
-import { MenuBarProps } from '../page';
+import { useDispatch, useSelector } from 'react-redux';
+import { handleMenuBarAside } from '../../../slice/index'
+import { RootState } from 'store';
 
-type AsideProps = {
-  menuBar: MenuBarProps;
-  setMenuBar: (menuBar: MenuBarProps) => void;
-};
-
-export default function Aside(props: AsideProps) {
-  const { menuBar, setMenuBar } = props;
+export default function Aside() {
+  const { MenuBarAside } = useSelector((state: RootState) => state.Slice);
+  const dispatch = useDispatch();
 
   return (
-    <aside className={`${styles[`${menuBar.value}`]} ${styles.aside}`}>
+    <aside className={`${styles[`${MenuBarAside.value}`]} ${styles.aside} enter`}>
       <div className={styles['aside-container']}>
         <header className={styles.header}>
           <div className={styles['header-title']}>
-            <MdMovie className={styles.icon} onClick={() => handleMenuBar()} />
+            <MdMovie className={styles.icon} onClick={() => dispatch(handleMenuBarAside())} />
             <span translate="no">Movies</span>
           </div>
 
           <AiOutlineClose
             className={`${styles.closed} ${styles.icon}`}
-            onClick={() => handleMenuBar()}
+            onClick={() => dispatch(handleMenuBarAside())}
           />
         </header>
 
@@ -108,12 +106,4 @@ export default function Aside(props: AsideProps) {
       </div>
     </aside>
   );
-
-  function handleMenuBar() {
-    if (window.innerWidth < 1024) {
-      menuBar.value == 'open'
-        ? setMenuBar({ value: 'closed' })
-        : setMenuBar({ value: 'open' });
-    }
-  }
 }

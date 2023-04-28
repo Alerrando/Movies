@@ -9,6 +9,8 @@ import { MenuBarProps } from '../page';
 import CarouselMain from './CarouselMain';
 import CarouselPopular from './CarouselPopular';
 import FeaturedFilm from './FeaturedFilm';
+import { useSelector } from 'react-redux';
+import { RootState } from 'store';
 
 type MainProps = {
   menuBar: MenuBarProps;
@@ -40,11 +42,12 @@ export type FeaturedFilmType = {
 }
 
 export default function Main(props: MainProps) {
+  const { MenuBarAside } = useSelector((root: RootState) => root.Slice)
   const [featuredFilm, setFeaturedFilm] = React.useState<FeaturedFilmType>({} as FeaturedFilmType);
   const { menuBar } = props;
 
   return (
-    <main className={`${menuBar.value} ${styles.main}`}>
+    <main className={`${menuBar.value} ${styles.main} ${styles[MenuBarAside.value]}`}>
       <CarouselMain />
       <CarouselPopular setFeaturedFilm={setFeaturedFilm} />
       <CarouselReleased setFeaturedFilm={setFeaturedFilm} />

@@ -5,14 +5,20 @@
   flex-direction: column;
   gap: 1.5rem;
   margin-left: auto;
-  padding-top: 18%;
   transition: width 0.5s ease-in-out;
   width: 100%;
 }
 
 @media (min-width: 1024px) {
-  .main {
+  .main{
     padding: 0 20px;
+  }
+
+  .main.closed{
+    width: 100%;
+  }
+
+  .main.open {
     width: 80%;
   }
 }

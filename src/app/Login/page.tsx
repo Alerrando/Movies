@@ -7,7 +7,7 @@ import { BsFacebook, BsTwitter } from 'react-icons/bs';
 import FormLogin from '../login/FormLogin';
 import FormSignUp from '../login/FormSignUp';
 import styles from './styles.module.scss';
-import Header from '../(home)/Header'
+import Header from '../../components/Header'
 
 type LoginSignUp = {
   login: 'Login' | 'SignUp';

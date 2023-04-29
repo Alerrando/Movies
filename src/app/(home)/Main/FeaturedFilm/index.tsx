@@ -21,7 +21,6 @@ type Genre = {
 
 export default function FeaturedFilm({ featuredFilm }: FeaturedFilmProps) {
   const [genresTotal, setGenresTotal] = useState<GenreMovies>({} as GenreMovies);
-  console.log(featuredFilm);
 
   useEffect(() => {
     (async function () {
@@ -73,23 +72,27 @@ export default function FeaturedFilm({ featuredFilm }: FeaturedFilmProps) {
         </Tab.List>
         <Tab.Panels className={styles.TabPanel}>
           <Tab.Panel className={styles["panel"]}>
-            <AiOutlineStar size={18} />
-            <span>{featuredFilm.vote_average}</span>
+            <div className={styles['panel-average-genres']}>
+              <AiOutlineStar size={18} />
+              <span>{featuredFilm.vote_average}</span>
 
-            <div className={styles["panel-genres"]}>
-              {Object.keys(genresTotal).length > 0
-                ? genresTotal.genres.map((genre: Genre, index: number) => (
-                  <>
-                      {featuredFilm.genre_ids.indexOf(genre.id) > -1 ? (
-                        <>
-                          <span>|</span>
-                          <p>{genre.name}</p>
-                        </>
-                      ) : null}
-                    </>
-                  ))
-                : null}
+              <div className={styles["panel-genres"]}>
+                {Object.keys(genresTotal).length > 0
+                  ? genresTotal.genres.map((genre: Genre, index: number) => (
+                    <>
+                        {featuredFilm.genre_ids.indexOf(genre.id) > -1 ? (
+                          <>
+                            <span>|</span>
+                            <p>{genre.name}</p>
+                          </>
+                        ) : null}
+                      </>
+                    ))
+                  : null}
+              </div>
             </div>
+
+            <h2 className={styles['h2']}>{featuredFilm.title}</h2>
           </Tab.Panel>
           <Tab.Panel className={styles["panel"]}></Tab.Panel>
         </Tab.Panels>

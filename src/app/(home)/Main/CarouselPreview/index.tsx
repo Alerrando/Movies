@@ -1,50 +1,38 @@
-import React, { useState, useEffect } from "react";
-import { FeaturedCarousel, FeaturedFilmType } from "..";
-import { getMoviesReleased } from "api";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { A11y, Navigation, Pagination, Scrollbar } from "swiper";
-import styles from "../CarouselPopular/styles.module.scss";
+import React from "react";
 import Image from "next/image";
+import { useEffect, useState } from "react";
+import { A11y, Navigation, Pagination, Scrollbar } from "swiper";
+import { Swiper, SwiperSlide } from "swiper/react";
+import styles from "./styles.module.scss";
+import { AiOutlineHeart, AiOutlineStar } from "react-icons/ai";
+import { FeaturedCarousel, FeaturedFilmType } from "..";
 import { HiOutlineViewfinderCircle } from "react-icons/hi2";
-import { AiOutlineHeart } from "react-icons/ai";
 
-type CarouselReleasedProps = {
+type CarouselPopularProps = {
   setFeaturedFilm: (featuredFilm: FeaturedFilmType) => void,
+  infosCarousel: FeaturedCarousel,
+  title: string,
 }
 
-export default function CarouselReleased({ setFeaturedFilm }: CarouselReleasedProps) {
-  const [releasedMovies, setReleasedMovies] = useState<FeaturedCarousel>(
-    {} as FeaturedCarousel
-  );
-
-  useEffect(() => {
-    (async function () {
-      try {
-        const repos = await getMoviesReleased();
-        setReleasedMovies(repos);
-      } catch (e) {
-        console.error(e);
-      }
-    })();
-  });
-
+export default function CarouselPreview({ setFeaturedFilm, infosCarousel, title }: CarouselPopularProps) {
+  
   return (
     <>
-      <h2>Movies That Released</h2>
+      <h2 className={styles.title}>{title}</h2>
       <Swiper
         modules={[Navigation, Pagination, Scrollbar, A11y]}
         spaceBetween={25}
         slidesPerView={6}
         loop={true}
         scrollbar={{ draggable: true }}
-        onSwiper={(swiper) => console.log(swiper)}
-        onSlideChange={() => console.log("slide change")}
+        onSwiper={(swiper) => {}}
+        onSlideChange={() => {}}
         className={`${styles["section-container"]}`}
       >
-        {Object.keys(releasedMovies).length == 0 ? (
+        {Object.keys(infosCarousel).length == 0 ? (
           <div className="spinner"></div>
         ) : (
-          releasedMovies.results.map((item: any, indexCarousel: number) => (
+          infosCarousel.results.map((item: any, indexCarousel: number) => (
             <div key={`film-id-${item.id}`}>
               <SwiperSlide
                 className={styles.containerPopularMovieInfo}
@@ -65,6 +53,13 @@ export default function CarouselReleased({ setFeaturedFilm }: CarouselReleasedPr
 
                 <div className={styles.popularMovieInfo}>
                   <h4>{item.title}</h4>
+
+                  <div className={styles.rating}>
+                    <div className={styles['container-rating']}>
+                      <AiOutlineStar size={18} />
+                      <span>{item.vote_average}</span>
+                    </div>
+                  </div>
 
                   <div className={styles['views-favorites']}>
                     <div className={styles['container-views-favorites']}>

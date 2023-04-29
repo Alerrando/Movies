@@ -34,14 +34,19 @@
       gap: 10px;
       height: auto;
       padding: 8px 10px;
-      width: 30%;
+      width: 50%;
 
       input {
         background-color: transparent;
         color: white;
         border: none;
         outline: none;
+        width: 80%;
       }
+    }
+
+    .menu{
+      font-size: 1rem;
     }
 
     .profile {
@@ -49,10 +54,8 @@
       border: 2px solid transparent;
       border-radius: 50em;
       cursor: pointer;
-      height: 2.375rem;
       margin-right: 1rem;
       position: relative;
-      width: 2.375rem;
 
       img {
         border-radius: 50%;
@@ -60,6 +63,11 @@
         object-fit: cover;
         width: 100%;
       }
+    }
+
+    .profile.closed{
+      height: 2.375rem;
+      width: 2.375rem;
     }
   }
 }
@@ -72,17 +80,11 @@
       justify-content: space-between;
       width: 65%;
 
-      .ul {
-        gap: 2rem;
-
-        .a {
-          .li {
-            font-size: 1rem;
-          }
-        }
+      .search-container{
+        width: 30%;
       }
 
-      .profile {
+      .profile.closed {
         height: 2.8125rem;
         margin-right: 5rem;
         width: 2.8125rem;

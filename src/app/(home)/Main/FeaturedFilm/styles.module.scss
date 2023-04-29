@@ -1,5 +1,6 @@
 .featuredFilm{
     height: 25rem;
+    margin-bottom: 10px;
     position: relative;
     width: 100%;
 
@@ -46,24 +47,31 @@
 
     .TabPanel{
         left: 10%;
-        top: 40%;
+        top: 10%;
 
-        .panel, .panel-genres{
-            align-items: center;
-            display: flex;
-            flex-direction: row;
-            gap: 10px;
+        .panel{
+            display: grid;
+            gap: 12px;
+
+            .panel-average-genres, .panel-genres{
+                align-items: center;
+                display: flex;
+                flex-direction: row;
+                gap: 10px;
+            }
+
+            .h2{
+                font-size: 2.2rem;
+                font-weight: 700;
+            }
         }
+
     }
 }
 
 @media only screen and (min-width: 1024px) {
     .featuredFilm{
         height: 35rem;
-
-        img{
-            height: 99%!important;
-        }
         
         .TabList .tabble{
             font-size: 1rem;

@@ -13,7 +13,6 @@
   display: flex;
   height: auto;
   justify-content: flex-start;
-  position: block;
   width: 100%;
 
   .headerContainer {
@@ -45,49 +44,65 @@
       }
     }
 
-    .menu{
+    .menu {
       font-size: 1rem;
     }
 
-    .profile {
-      background: linear-gradient(to right, red, white) border-box;
-      border: 2px solid transparent;
-      border-radius: 50em;
-      cursor: pointer;
-      margin-right: 1rem;
-      position: relative;
+    .profile-menu {
+      .profile-menu-container .profile {
+        background: linear-gradient(to right, red, white) border-box;
+        border: 2px solid transparent;
+        border-radius: 50em;
+        cursor: pointer;
+        height: 3rem;
+        margin-right: 1rem;
+        position: relative;
+        width: 3rem;
 
-      img {
-        border-radius: 50%;
-        height: 100%;
-        object-fit: cover;
-        width: 100%;
+        img {
+          border-radius: 50%;
+          height: 100%;
+          object-fit: cover;
+          width: 100%;
+        }
       }
-    }
 
-    .profile.closed{
-      height: 2.375rem;
-      width: 2.375rem;
+      &.open {
+        align-items: center;
+        background-color: rgba(0, 0, 0, 0.5);
+        display: flex;
+        justify-content: flex-end;
+        height: 100%;
+        inset: 0;
+        position: fixed;
+        width: 100%;
+        z-index: 52;
+
+        .profile-menu-container {
+          background-color: #17181b;
+          height: 100%;
+          width: 100%;
+        }
+      }
     }
   }
 }
 
 @media (min-width: 1024px) {
   .header {
+    height: 88px;
     position: relative;
 
     .headerContainer {
       justify-content: space-between;
       width: 65%;
 
-      .search-container{
+      .search-container {
         width: 30%;
       }
 
-      .profile.closed {
-        height: 2.8125rem;
-        margin-right: 5rem;
-        width: 2.8125rem;
+      .profile-menu.open .profile-menu-container {
+        width: 30%;
       }
     }
   }

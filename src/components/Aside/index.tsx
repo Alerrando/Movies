@@ -26,9 +26,9 @@ export default function Aside() {
         <header className={styles.header}>
           <div className={styles['header-title']}>
             <MdMovie className={styles.icon} onClick={() => dispatch(handleMenuBarAside())} />
-            <span translate="no">Movies</span>
+            <span translate="no" data-testid="Movies-Aside">Movies</span>
           </div>
-
+          
           <AiOutlineClose
             className={`${styles.closed} ${styles.icon}`}
             onClick={() => dispatch(handleMenuBarAside())}

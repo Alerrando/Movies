@@ -12,7 +12,6 @@ type HeaderProps = {
 
 export default function Header(props: HeaderProps) {
   const { MenuBarHeader } = useSelector((root: RootState) => root.Slice);
-  const [menuBar, setMenuBar] = React.useState(MenuBarHeader.value);
   const dispatch = useDispatch();
   const { style } = props;
 
@@ -24,16 +23,21 @@ export default function Header(props: HeaderProps) {
             <input type="text" placeholder="Search" />
         </div>
 
-        <div className={`${styles[`${MenuBarHeader.value}`]} ${styles.profile}`}>
-          <Image
-            loader={() => "https://image.tmdb.org/t/p/w500/xDMIl84Qo5Tsu62c9DGWhmPI67A.jpg"}
-            src="https://image.tmdb.org/t/p/w500/xDMIl84Qo5Tsu62c9DGWhmPI67A.jpg"
-            alt="img-profile"
-            fill
-            unoptimized
-            onClick={() => dispatch(handleMenuBarHeader())}
-          />
+        <div className={`${styles[`${MenuBarHeader.value}`]} ${styles['profile-menu']}`}>
+          <div className={styles['profile-menu-container']}>
+            <div className={`${styles.profile}`}>
+              <Image
+                loader={() => "https://image.tmdb.org/t/p/w500/xDMIl84Qo5Tsu62c9DGWhmPI67A.jpg"}
+                src="https://image.tmdb.org/t/p/w500/xDMIl84Qo5Tsu62c9DGWhmPI67A.jpg"
+                alt="img-profile"
+                fill
+                unoptimized
+                onClick={() => dispatch(handleMenuBarHeader())}
+              />
+            </div>
+          </div>
         </div>
+
       </div>
     </header>
   );

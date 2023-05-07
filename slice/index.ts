@@ -8,7 +8,7 @@ interface LoginProps {
   recentsView: [];
 }
 
-const LoginAux: LoginProps = {
+const LoginValue: LoginProps = {
   email: '',
   password: '',
   favorites: [],
@@ -19,7 +19,7 @@ export type MenuBarProps = {
   value: string;
 };
 
-const MenuBar: MenuBarProps = {
+const MenuBarValue: MenuBarProps = {
   value: "closed" || "open",
 };
 
@@ -30,9 +30,9 @@ export interface StateProps {
 }
 
 const initialState: StateProps = {
-  user: LoginAux,
-  MenuBarAside: MenuBar,
-  MenuBarHeader: MenuBar,
+  user: LoginValue,
+  MenuBarAside: MenuBarValue,
+  MenuBarHeader: MenuBarValue,
 };
 
 
@@ -50,18 +50,14 @@ export const Slice = createSlice({
     },
 
     handleMenuBarAside: (state) => {
-      state.MenuBarAside.value == "closed" ? state.MenuBarAside.value = "open" : state.MenuBarAside.value = 'closed'
+      state.MenuBarAside.value = state.MenuBarAside.value === 'closed' ? 'open' : 'closed';
     },
-
     handleMenuBarHeader: (state) => {
-      state.MenuBarHeader.value == "closed"? state.MenuBarHeader.value = "open" : state.MenuBarHeader.value = 'closed'
+      state.MenuBarHeader.value = state.MenuBarHeader.value === 'closed' ? 'open' : 'closed';
     },
   },
 });
 
 // Action creators are generated for each case reducer function
 export const { signInUser, handleMenuBarAside, handleMenuBarHeader } = Slice.actions;
-
-export const selecValue = (state: RootState) => state.Slice;
-
 export default Slice.reducer;

@@ -1,4 +1,3 @@
-import { Swiper, SwiperSlide } from "swiper/react";
 import { A11y, Navigation, Pagination, Scrollbar } from "swiper";
 import { Popover, Transition } from "@headlessui/react";
 import Image from "next/image";
@@ -6,9 +5,10 @@ import { AiOutlineHeart, AiOutlineStar } from "react-icons/ai";
 import { HiViewfinderCircle } from "react-icons/hi2";
 import styles from "./styles.module.scss";
 import { getRatedCarousel } from "api";
-import { Fragment, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { FeaturedCarousel } from "..";
 import 'css/animation.scss'
+import { SwiperSlide, Swiper } from "swiper/react";
 
 export default function CarouselMain() {
   const [featuredCarousel, setFeaturedCarousel] = useState<FeaturedCarousel>(

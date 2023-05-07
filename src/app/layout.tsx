@@ -1,15 +1,14 @@
 'use client'
 
-import { Provider } from 'react-redux'
-import { store } from 'store'
-import 'css/global.scss'
-import Aside from '@/components/Aside'
+import { Provider } from 'react-redux';
+import Aside from '@/components/Aside';
+import { store } from 'store';
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+interface RootLayoutProps {
+  children: React.ReactNode;
+}
+
+export default function RootLayout({ children }: RootLayoutProps){
   return (
     <html lang="pt-br">
       <body>
@@ -19,5 +18,5 @@ export default function RootLayout({
         </Provider>
       </body>
     </html>
-  )
-}
+  );
+};

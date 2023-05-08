@@ -1,9 +1,9 @@
 import { AiOutlineMail } from 'react-icons/ai';
 import { BiUser } from 'react-icons/bi';
 import { MdPassword } from 'react-icons/md';
-import { LoginFormInputs } from '../../login/FormLogin';
 import styles from '../styles.module.scss';
 import { useForm } from 'react-hook-form';
+import { LoginFormInputs } from '../FormLogin';
 
 type RegisterFormInputs = {
   name: string;

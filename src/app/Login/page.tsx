@@ -4,10 +4,10 @@ import Image from 'next/image';
 import React, { useState, CSSProperties } from 'react';
 import { FcGoogle } from 'react-icons/fc';
 import { BsFacebook, BsTwitter } from 'react-icons/bs';
-import FormLogin from '../login/FormLogin';
-import FormSignUp from '../login/FormSignUp';
 import styles from './styles.module.scss';
 import Header from '../../components/Header'
+import FormLogin from './FormLogin';
+import FormSignUp from './FormSignUp';
 
 type LoginSignUp = {
   login: 'Login' | 'SignUp';

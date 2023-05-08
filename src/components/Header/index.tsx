@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import * as React from 'react';
 import { FiSearch } from 'react-icons/fi';
-import styles from './Style.module.scss';
+import styles from './style.module.scss';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from 'store';
 import { handleMenuBarHeader } from 'slice';

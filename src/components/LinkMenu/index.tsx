@@ -1,4 +1,3 @@
-import { Icon } from "next/dist/lib/metadata/types/metadata-types";
 import React, { Key } from "react";
 import styles from "./styles.module.scss";
 import { useSelector } from "react-redux";
@@ -6,17 +5,7 @@ import { RootState } from "store";
 import Link from "next/link";
 import { AiOutlineSetting } from "react-icons/ai";
 import { BiHelpCircle } from "react-icons/bi";
-
-type LinksProps = {
-	href: string,
-	icon: Icon,
-	span: string,
-}
-
-export type MenuLinksProps = {
-	title: string,
-	links: LinksProps[],
-}
+import { LinksProps, MenuLinksProps } from "../Aside";
 
 type LinkMenuProps = {
     menuLinks: MenuLinksProps[],

@@ -1,7 +1,6 @@
-import { AiOutlineCompass, AiOutlineHeart, AiOutlineClose, AiOutlineClockCircle, AiOutlineStar,AiOutlineSetting } from "react-icons/ai";
+import { AiOutlineCompass, AiOutlineHeart, AiOutlineClose, AiOutlineClockCircle, AiOutlineStar } from "react-icons/ai";
 import { BsHouseDoor, BsDownload, BsPeople, BsAlarm } from "react-icons/bs";
 import { MdMovie, MdOutlineLogout } from "react-icons/md";
-import { BiHelpCircle } from "react-icons/bi";
 import * as React from "react";
 import styles from "./style.module.scss";
 import Link from "next/link";
@@ -10,6 +9,17 @@ import { handleMenuBarAside } from "../../../slice/index";
 import { RootState } from "store";
 import LinkMenu, { MenuLinksProps } from "../LinkMenu";
 
+export type LinksProps = {
+	href: string,
+	icon: Icon,
+	span: string,
+}
+
+
+export type MenuLinksProps = {
+	title: string,
+	links: LinksProps[],
+}
 
 export default function Aside() {
 	const { MenuBarAside } = useSelector((state: RootState) => state.Slice);

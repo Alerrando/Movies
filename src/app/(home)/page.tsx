@@ -10,18 +10,18 @@ export type MenuBarProps = {
 };
 
 const MenuBar: MenuBarProps = {
-  value: "closed" || "open",
+	value: "closed" || "open",
 };
 
 export default function HomePage() {
-  const [menuBar, setMenuBar] = React.useState(MenuBar);
+	const [menuBar, setMenuBar] = React.useState(MenuBar);
 
-  return (
-    <div className="body-container">
-      <section>
-        <Header style={undefined} />
-        <Main menuBar={menuBar} />
-      </section>
-    </div>
-  );
+	return (
+		<div className="body-container">
+			<section>
+				<Header style={undefined} />
+				<Main menuBar={menuBar} />
+			</section>
+		</div>
+	);
 }
